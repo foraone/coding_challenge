@@ -28,3 +28,6 @@ names to merge for the profile. The profile should include the following informa
 * A list/count of repo topics
 ```
 
+# What to improve
+
+Moving from 1 to 3 strategy should also include `asyncio` usage for parallel data acquisition. But my recommendation is also move to Python 3.7 (considering improvements on async run etc)
