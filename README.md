@@ -35,3 +35,7 @@ curl -i "http://127.0.0.1:5000/api/v1/org/mailchimp/team/mailchimp"
 Here you will get something like that
 
 ![](screenshot.png)
+
+# What are the next improvements?
+
+See [my thoughts](/THOUGHTS.md)

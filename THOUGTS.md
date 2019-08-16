@@ -28,6 +28,3 @@ names to merge for the profile. The profile should include the following informa
 * A list/count of repo topics
 ```
 
-# What are the next improvements?
-
-See [my thoughts](/THOUGHTS.md)
