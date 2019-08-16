@@ -6,7 +6,7 @@ A skeleton flask app to use for a coding challenge.
 
 You can use a virtual environment (conda, venv, etc):
 ```
-conda env create -f environment.yml
+conda env create -f environment.yaml
 source activate user-profiles
 ```
 
