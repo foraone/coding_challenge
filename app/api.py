@@ -55,6 +55,23 @@ class BaseAPI(object):
             pass
 
         return {}
+    
+    def _paging_request(self, url, data=[]):
+        try:
+            response = requests.get(url)
+            logger.info(f"Request: {url}")
+            subdata = response.json()
+
+            data = data + subdata['values']
+            print(data)
+            if 'next' in subdata.keys():
+                return self._paging_request(subdata['next'], data)
+            else:
+                return data
+        except Exception:
+            pass
+
+        return {}
 
 class RepoAPI(BaseAPI):
     def _merge_data(self, github_team, github_repos, bitbucket_repos):
@@ -153,10 +170,10 @@ class RepoAPI(BaseAPI):
 
         # There is a pagination in API. lets do some fix
         bitbucket_repos_url = f"{settings.BITBUCKET_BASE_URL}/{settings.BITBUCKET_SUFFIX['repo_url'].format(team_name=self.team_name)}"
-        bitbucket_repos_data = self._request(bitbucket_repos_url).get('values', [])
+        bitbucket_repos_data = self._paging_request(bitbucket_repos_url)
         
         print(github_team_data, git_repos_data, bitbucket_repos_data)
         return self._merge_data(github_team_data, git_repos_data, bitbucket_repos_data)
 
-    def _paging_request(self):
+
         

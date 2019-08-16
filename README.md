@@ -28,7 +28,10 @@ python -m run
 
 ```
 curl -i "http://127.0.0.1:5000/health-check"
+
+curl -i "http://127.0.0.1:5000/api/v1/org/mailchimp/team/mailchimp"
 ```
 
+Here you will get something like that
 
-## What'd I'd like to improve on...
+![](screenshot.png)

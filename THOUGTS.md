@@ -3,7 +3,7 @@
 There are several ways to resolve original task in the challenge. And different criterias of success
 
 1. Fast to deliver. Since we don't have load estimations etc
-2. Be a step inside the strategy of development. Then data and controller layer should be considered to be compatible with next steps
+2. Be a step inside the strategy of development. Then data and controller layer should be considered to be compatible with next steps of development
 3. Write "the most" runtime efficient code
 
 For the first strategy it is absolutely enough to use `requests` for REST APIs. It even can be quick'n'dirty, because in reference data only dozens of repos are listed. So there is no special load expected.
@@ -14,3 +14,20 @@ Third strategy is based on first two but with measurable improvements and usage 
 
 # What is done in the demo?
 
+There can't be done RESTful API. We can't neither update nor create resources (repos/teams or organisations in Gihub slang). So it is more HTTP API with the only GET. I have chosen 1 approach. To make it workable. By the way, if API is RESTful it it quite strange to talk about verbs besides typical CRUD pattern over existing resourses. 
+
+We can only GET info described in original doc: 
+
+```
+Provide a RESTful way for a client to provide the Github organization and Bitbucket team
+names to merge for the profile. The profile should include the following information (when available):
+
+* Total number of public repos (seperate by original repos vs forked repos)
+* Total watcher/follower count
+* A list/count of languages used across all public repos
+* A list/count of repo topics
+```
+
+# What are the next improvements?
+
+See [my thoughts](/THOUGHTS.md)
